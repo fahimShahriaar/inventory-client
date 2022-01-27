@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Admin from "./Pages/AdminPage/Admin/Admin";
 import Adjustment from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/AdjustmentComp/Adjustment/Adjustment";
@@ -17,6 +17,17 @@ export const AppContext = createContext();
 
 function App() {
   const [branchList, setBranchList] = useState([]);
+  // GET all branches
+  useEffect(() => {
+    fetch('http://localhost:5000/admin/branches')
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data);
+        setBranchList(data);
+      })
+      .catch(err => console.log(err))
+  }, [setBranchList])
+
   return (
     <AppContext.Provider value={{
       branchListState: [branchList, setBranchList]

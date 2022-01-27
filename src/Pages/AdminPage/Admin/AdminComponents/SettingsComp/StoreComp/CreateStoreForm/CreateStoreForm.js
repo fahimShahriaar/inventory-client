@@ -2,23 +2,24 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { AppContext } from '../../../../../../../App';
 
 const CreateStoreForm = () => {
+    const { branchListState } = useContext(AppContext);
+    const [branchList] = branchListState;  // get state from context
+
+    // console.log(branchList);
+
     const [dropdown, setDropdown] = useState(false);
     const [selectedBranch, setSelectedBranch] = useState({
         branchID: '',
         branchName: ''
     });
-    const [newStoreState, setNewStoreState] = useState({
-        storeID: '',
-        storeName: ''
-    })
-
-    const { branchListState } = useContext(AppContext);
-    const [branchList] = branchListState;  // get state from context
 
     const storeNameRef = useRef();
     const storeIDRef = useRef();
 
-
+    const [newStoreState, setNewStoreState] = useState({
+        storeID: '',
+        storeName: ''
+    })
 
     const handleSelectedBranch = (branch) => {
         console.log(branch._id);
@@ -40,7 +41,7 @@ const CreateStoreForm = () => {
         e.preventDefault();
     }
 
-    console.log(newStoreState);
+    newStoreState.storeID && newStoreState.storeName && console.log(newStoreState);
 
     useEffect(() => {
         newStoreState.storeID && newStoreState.storeName &&
@@ -54,7 +55,7 @@ const CreateStoreForm = () => {
                 .then(res => res.json())
                 .then(data => console.log(data))
                 .catch(err => console.log(err))
-    }, [newStoreState]);
+    }, [newStoreState, selectedBranch._id]);
 
     return (
         <div>
