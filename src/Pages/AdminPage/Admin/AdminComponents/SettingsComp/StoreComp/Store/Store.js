@@ -1,7 +1,7 @@
 import React from 'react';
 import AdminHeader from '../../../../AdminHeader/AdminHeader';
 import AdminSidebar from '../../../../AdminSidebar/AdminSidebar';
-// import CreateStoreForm from '../CreateStoreForm/CreateStoreForm';
+import CreateStoreForm from '../CreateStoreForm/CreateStoreForm';
 
 const Store = () => {
     return (
@@ -16,7 +16,7 @@ const Store = () => {
                         {/* Store body */}
                         <div className="my-6">
                             <div className='w-6/12'>
-                                <p>CreateStoreForm</p>
+                                <CreateStoreForm />
                             </div>
                         </div>
                     </div>

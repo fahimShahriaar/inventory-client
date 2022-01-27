@@ -1,3 +1,4 @@
+import { createContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Admin from "./Pages/AdminPage/Admin/Admin";
 import Adjustment from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/AdjustmentComp/Adjustment/Adjustment";
@@ -12,9 +13,14 @@ import Store from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/StoreCom
 import User from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/UserComp/User/User";
 import Login from "./Pages/LoginPage/Login/Login";
 
+export const AppContext = createContext();
+
 function App() {
+  const [branchList, setBranchList] = useState([]);
   return (
-    <div>
+    <AppContext.Provider value={{
+      branchListState: [branchList, setBranchList]
+    }}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route exact path="/admin" element={<Admin />} />
@@ -35,7 +41,7 @@ function App() {
         <Route path="/admin/product-management/manage-products" element={<ManageProduct />} />
         <Route path="/admin/product-management/all-products" element={<AllProducts />} />
       </Routes>
-    </div>
+    </AppContext.Provider>
   );
 }
 

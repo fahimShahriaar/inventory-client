@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { AppContext } from '../../../../../../../App';
 
 const BranchList = () => {
-    const [branchList, setBranchList] = useState([]); // Get data from context
+    const { branchListState } = useContext(AppContext); // Get data from context
+    const [branchList, setBranchList] = branchListState;
+    // console.log(branchList);
 
     useEffect(() => {
         fetch('http://localhost:5000/admin/branches')
