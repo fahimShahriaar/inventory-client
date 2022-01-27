@@ -11,9 +11,9 @@ const AdminSidebar = () => {
                         <Link to="/admin/settings/branch">
                             <li className='px-6 py-1 hover:bg-gray-400 border-t border-gray-700'>Branch</li>
                         </Link>
-                        <Link to="/admin/settings/store">
+                        {/* <Link to="/admin/settings/store">
                             <li className='px-6 py-1 hover:bg-gray-400 border-t border-gray-700'>Store</li>
-                        </Link>
+                        </Link> */}
                         <Link to="/admin/settings/bin">
                             <li className='px-6 py-1 hover:bg-gray-400 border-t border-gray-700'>Bin</li>
                         </Link>
