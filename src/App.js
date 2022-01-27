@@ -4,6 +4,8 @@ import Adjustment from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationC
 import Delivery from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/DeliveryComp/Delivery/Delivery";
 import InternalTransfer from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/InternalTransferComp/InternalTransfer/InternalTransfer";
 import Receive from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/ReceiveComp/Receive/Receive";
+import AllProducts from "./Pages/AdminPage/Admin/AdminComponents/ProductManagementComp/AllProducts/AllProducts";
+import ManageProduct from "./Pages/AdminPage/Admin/AdminComponents/ProductManagementComp/ManageProduct/ManageProduct";
 import Bin from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/BinComp/Bin/Bin";
 import Branch from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/BranchComp/Branch/Branch";
 import Store from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/StoreComp/Store/Store";
@@ -28,6 +30,10 @@ function App() {
         <Route path="/admin/branch-operation/delivery" element={<Delivery />} />
         <Route path="/admin/branch-operation/adjustment" element={<Adjustment />} />
         <Route path="/admin/branch-operation/internal-transfer" element={<InternalTransfer />} />
+
+        {/* Product management routes*/}
+        <Route path="/admin/product-management/manage-products" element={<ManageProduct />} />
+        <Route path="/admin/product-management/all-products" element={<AllProducts />} />
       </Routes>
     </div>
   );

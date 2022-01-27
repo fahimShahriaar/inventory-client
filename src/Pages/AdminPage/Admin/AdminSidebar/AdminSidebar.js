@@ -39,16 +39,17 @@ const AdminSidebar = () => {
                         </Link>
                     </ul>
                 </li>
-                <Link to="product-management">
-                    <li className='hover:bg-gray-400'>
-                        <span className='block p-2'>Product Management</span>
-                        <ul className='bg-gray-700 text-sm'>
+                <li className='hover:bg-gray-400'>
+                    <span className='block p-2'>Product Management</span>
+                    <ul className='bg-gray-700 text-sm'>
+                        <Link to="/admin/product-management/manage-products">
                             <li className='px-6 py-1 hover:bg-gray-400 border-t border-gray-700'>Manage Products</li>
-                            <li className='px-6 py-1 hover:bg-gray-400'>All Products</li>
-                        </ul>
-
-                    </li>
-                </Link>
+                        </Link>
+                        <Link to="/admin/product-management/all-products">
+                            <li className='px-6 py-1 hover:bg-gray-400 border-t border-gray-700'>All Products</li>
+                        </Link>
+                    </ul>
+                </li>
                 <Link to="link4">
                     <li className='hover:bg-gray-400 p-2'>Coming soon...</li>
                 </Link>
