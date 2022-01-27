@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import { AppContext } from '../../../../../../../App';
 
 const CreateStoreForm = () => {
     const [dropdown, setDropdown] = useState(false);
@@ -11,10 +12,8 @@ const CreateStoreForm = () => {
         storeName: ''
     })
 
-    // const { branchListState } = useContext(AppContext);
-    // const [branchList] = branchListState;  // get state from context
-    // console.log(branchList);
-    const branchList = []
+    const { branchListState } = useContext(AppContext);
+    const [branchList] = branchListState;  // get state from context
 
     const storeNameRef = useRef();
     const storeIDRef = useRef();
@@ -41,21 +40,21 @@ const CreateStoreForm = () => {
         e.preventDefault();
     }
 
-    // console.log(newStoreState);
+    console.log(newStoreState);
 
-    // useEffect(() => {
-    //     newStoreState.storeID && newStoreState.storeName &&
-    //         fetch(`http://localhost:5000/admin/branch/${selectedBranch._id}`, {
-    //             method: 'PUT', // Method itself
-    //             headers: {
-    //                 'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
-    //             },
-    //             body: JSON.stringify(newStoreState) // We send data in JSON format
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => console.log(data))
-    //             .catch(err => console.log(err))
-    // }, [newStoreState]);
+    useEffect(() => {
+        newStoreState.storeID && newStoreState.storeName &&
+            fetch(`http://localhost:5000/admin/branch/${selectedBranch._id}`, {
+                method: 'PUT', // Method itself
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
+                },
+                body: JSON.stringify(newStoreState) // We send data in JSON format
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .catch(err => console.log(err))
+    }, [newStoreState]);
 
     return (
         <div>
@@ -88,13 +87,15 @@ const CreateStoreForm = () => {
                     </div>
 
                     <div>
-                        <label className='text-sm font-semibold'>Store Name</label>
-                        <input type="text" ref={storeNameRef} placeholder="Store name" className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
-                    </div>
-                    <div>
                         <label className='text-sm font-semibold'>Store ID</label>
                         <input type="text" ref={storeIDRef} placeholder="Store ID" className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                     </div>
+
+                    <div>
+                        <label className='text-sm font-semibold'>Store Name</label>
+                        <input type="text" ref={storeNameRef} placeholder="Store name" className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                    </div>
+
                 </div>
 
 

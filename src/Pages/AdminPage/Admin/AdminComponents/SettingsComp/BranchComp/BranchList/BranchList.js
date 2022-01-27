@@ -6,6 +6,7 @@ const BranchList = () => {
     const [branchList, setBranchList] = branchListState;
     // console.log(branchList);
 
+    // GET all branches
     useEffect(() => {
         fetch('http://localhost:5000/admin/branches')
             .then(res => res.json())
