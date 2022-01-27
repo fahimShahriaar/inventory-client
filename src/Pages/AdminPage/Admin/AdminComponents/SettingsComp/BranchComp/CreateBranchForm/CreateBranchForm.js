@@ -34,8 +34,8 @@ const CreateBranchForm = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} className="w-full">
-                <input type="text" ref={branchNameRef} placeholder="Branch name" className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
-                <input type="text" ref={branchIDRef} placeholder="Branch ID" className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                <input type="text" ref={branchNameRef} placeholder="Branch name" className='border w-6/12  my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                <input type="text" ref={branchIDRef} placeholder="Branch ID" className='border w-6/12  my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                 <textarea ref={branchDescRef} className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' placeholder="Description..."></textarea>
                 <button type="submit" className="text-sm bg-emerald-600 text-gray-50 px-4 py-1 my-2 rounded">Create Branch</button>
             </form>

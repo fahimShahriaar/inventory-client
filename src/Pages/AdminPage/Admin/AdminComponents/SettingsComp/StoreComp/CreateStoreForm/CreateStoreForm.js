@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../../../../../../../App';
 
-const CreateStoreForm = () => {
+const CreateStoreForm = ({ branch }) => {
     const { id } = useParams();
-    console.log(id);
+    // console.log(id);
 
     const { branchListState } = useContext(AppContext);
     const [branchList] = branchListState;  // get state from context
@@ -19,7 +19,7 @@ const CreateStoreForm = () => {
     }, [branchList.length, navigate])
 
     const selectedBranch = branchList.find(branch => branch._id.toString() === id.toString());
-    console.log(selectedBranch);
+    // console.log(selectedBranch);
 
 
     const storeNameRef = useRef();
@@ -65,25 +65,25 @@ const CreateStoreForm = () => {
     return (
         <div>
             {
-                <form onSubmit={handleSubmit} className="w-full shadow-lg ml-4 rounded p-4">
+                <form onSubmit={handleSubmit} className="w-full">
                     <div className='mt-2'>
-                        <div>
+                        <div className="w-1/2 inline-block">
                             <label className='text-sm font-semibold'>Branch ID</label>
-                            <input type="text" disabled value={selectedBranch?.branchID} className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                            <input type="text" disabled value={selectedBranch?.branchID} className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                         </div>
-                        <div>
+                        <div className='w-1/2 inline-block'>
                             <label className='text-sm font-semibold'>Branch Name</label>
-                            <input type="text" disabled value={selectedBranch?.branchName} className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                            <input type="text" disabled value={selectedBranch?.branchName} className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                         </div>
 
-                        <div>
+                        <div className='w-1/2 inline-block mt-4'>
                             <label className='text-sm font-semibold'>Store ID</label>
-                            <input type="text" ref={storeIDRef} placeholder="Store ID" className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                            <input type="text" ref={storeIDRef} placeholder="Store ID" className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                         </div>
 
-                        <div>
+                        <div className='w-1/2 inline-block'>
                             <label className='text-sm font-semibold'>Store Name</label>
-                            <input type="text" ref={storeNameRef} placeholder="Store name" className='border w-full block my-2 p-2 rounded focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                            <input type="text" ref={storeNameRef} placeholder="Store name" className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                         </div>
 
                         <button type="submit" className="text-sm bg-emerald-600 text-gray-50 px-4 py-1 my-2 rounded">Create Store</button>

@@ -16,7 +16,7 @@ const BranchList = () => {
                         <div className="flex justify-between">
                             <div>{branch.branchName}</div>
                             <Link to={`/admin/settings/store/${branch._id}`}>
-                                <button className="bg-emerald-700 px-2 py-1 text-white text-xs">Store</button>
+                                <button className="bg-emerald-700 px-4 py-1 text-white text-xs">Store</button>
                             </Link>
                         </div>
                     </div>)
