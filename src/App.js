@@ -1,9 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import Admin from "./Pages/AdminPage/Admin/Admin";
-import Bin from "./Pages/AdminPage/Admin/AdminComponents/BinComp/Bin/Bin";
-import Branch from "./Pages/AdminPage/Admin/AdminComponents/BranchComp/Branch/Branch";
-import Store from "./Pages/AdminPage/Admin/AdminComponents/StoreComp/Store/Store";
-import User from "./Pages/AdminPage/Admin/AdminComponents/UserComp/User/User";
+import Adjustment from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/AdjustmentComp/Adjustment/Adjustment";
+import Delivery from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/DeliveryComp/Delivery/Delivery";
+import InternalTransfer from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/InternalTransferComp/InternalTransfer/InternalTransfer";
+import Receive from "./Pages/AdminPage/Admin/AdminComponents/BranchOperationComp/ReceiveComp/Receive/Receive";
+import Bin from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/BinComp/Bin/Bin";
+import Branch from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/BranchComp/Branch/Branch";
+import Store from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/StoreComp/Store/Store";
+import User from "./Pages/AdminPage/Admin/AdminComponents/SettingsComp/UserComp/User/User";
 import Login from "./Pages/LoginPage/Login/Login";
 
 function App() {
@@ -20,10 +24,10 @@ function App() {
         <Route path="/admin/settings/user" element={<User />} />
 
         {/* Branch operation routes */}
-        <Route path="/admin/branch-operation/receive" element={<p>Receive</p>} />
-        <Route path="/admin/branch-operation/delivery" element={<p>Delivery</p>} />
-        <Route path="/admin/branch-operation/adjustment" element={<p>Adjustment</p>} />
-        <Route path="/admin/branch-operation/internal-transfer" element={<p>I. transfer</p>} />
+        <Route path="/admin/branch-operation/receive" element={<Receive />} />
+        <Route path="/admin/branch-operation/delivery" element={<Delivery />} />
+        <Route path="/admin/branch-operation/adjustment" element={<Adjustment />} />
+        <Route path="/admin/branch-operation/internal-transfer" element={<InternalTransfer />} />
       </Routes>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
-import AdminHeader from '../../../AdminHeader/AdminHeader';
-import AdminSidebar from '../../../AdminSidebar/AdminSidebar';
+import AdminHeader from '../../../../AdminHeader/AdminHeader';
+import AdminSidebar from '../../../../AdminSidebar/AdminSidebar';
 // import CreateStoreForm from '../CreateStoreForm/CreateStoreForm';
 
 const Store = () => {

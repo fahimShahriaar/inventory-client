@@ -1,8 +1,8 @@
 import React from 'react';
-import AdminHeader from '../../../AdminHeader/AdminHeader';
-import AdminSidebar from '../../../AdminSidebar/AdminSidebar';
+import AdminHeader from '../../../../AdminHeader/AdminHeader';
+import AdminSidebar from '../../../../AdminSidebar/AdminSidebar';
 
-const Bin = () => {
+const InternalTransfer = () => {
     return (
         <div>
             <AdminHeader />
@@ -11,14 +11,11 @@ const Bin = () => {
                     <AdminSidebar />
                 </div>
                 <div className='w-10/12'>
-                    {/* BIN body */}
-                    <div className="text-2xl my-6">
-                        This is bin
-                    </div>
+                    Internal transfer comp here
                 </div>
             </div>
         </div>
     );
 };
 
-export default Bin;
+export default InternalTransfer;

@@ -1,8 +1,8 @@
 import React from 'react';
-import AdminHeader from '../../../AdminHeader/AdminHeader';
-import AdminSidebar from '../../../AdminSidebar/AdminSidebar';
+import AdminHeader from '../../../../AdminHeader/AdminHeader';
+import AdminSidebar from '../../../../AdminSidebar/AdminSidebar';
 
-const User = () => {
+const Adjustment = () => {
     return (
         <div>
             <AdminHeader />
@@ -11,14 +11,11 @@ const User = () => {
                     <AdminSidebar />
                 </div>
                 <div className='w-10/12'>
-                    {/* USER body */}
-                    <div className="text-2xl my-6">
-                        USER body
-                    </div>
+                    Adjustment comp here
                 </div>
             </div>
         </div>
     );
 };
 
-export default User;
+export default Adjustment;

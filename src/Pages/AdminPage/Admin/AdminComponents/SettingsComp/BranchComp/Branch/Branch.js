@@ -1,8 +1,8 @@
 import React from 'react';
-import AdminHeader from '../../../AdminHeader/AdminHeader';
-import AdminSidebar from '../../../AdminSidebar/AdminSidebar';
-import BranchList from '../../BinComp/BranchList/BranchList';
-import CreateBranchForm from '../../BinComp/CreateBranchForm/CreateBranchForm';
+import AdminHeader from '../../../../AdminHeader/AdminHeader';
+import AdminSidebar from '../../../../AdminSidebar/AdminSidebar';
+import BranchList from '../BranchList/BranchList';
+import CreateBranchForm from '../CreateBranchForm/CreateBranchForm';
 
 const Branch = () => {
     return (
