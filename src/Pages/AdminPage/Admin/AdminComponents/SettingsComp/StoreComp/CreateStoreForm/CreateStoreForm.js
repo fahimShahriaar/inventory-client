@@ -1,27 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { AppContext } from '../../../../../../../App';
+import React, { useEffect, useRef, useState } from 'react';
 
 const CreateStoreForm = ({ branch }) => {
-    // const { id } = useParams();
-    // console.log(id);
-
-    // const { branchListState } = useContext(AppContext);
-    // const [branchList] = branchListState;  // get state from context
-    // console.log(branchList.length);
-
-    // const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     if (branchList.length < 1) {
-    //         navigate('/admin/settings/branch')
-    //     }
-    // }, [branchList.length, navigate])
-
-    // const selectedBranch = branchList.find(branch => branch._id.toString() === id.toString());
-    // console.log(selectedBranch);
-
-
     const storeNameRef = useRef();
     const storeIDRef = useRef();
 
@@ -29,8 +8,6 @@ const CreateStoreForm = ({ branch }) => {
         storeID: '',
         storeName: ''
     })
-
-
 
     const handleSubmit = (e) => {
         const newStore = {
