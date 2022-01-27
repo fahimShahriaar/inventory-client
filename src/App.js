@@ -14,7 +14,7 @@ import Login from "./Pages/LoginPage/Login/Login";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route exact path="/admin" element={<Admin />} />
