@@ -7,7 +7,7 @@ const CreateStoreForm = () => {
     console.log(id);
 
     const { branchListState } = useContext(AppContext);
-    const [branchList, setBranchList] = branchListState;  // get state from context
+    const [branchList] = branchListState;  // get state from context
     console.log(branchList.length);
 
     // 

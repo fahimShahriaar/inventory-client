@@ -6,9 +6,9 @@ const BranchList = () => {
     const { branchListState } = useContext(AppContext); // Get data from context
     const [branchList] = branchListState;
     console.log(branchList);
-    const handleBranchDelete = () => {
-        alert("Are you sure?")
-    }
+    // const handleBranchDelete = () => {
+    //     alert("Are you sure?")
+    // }
 
     return (
         <div className="w-3/12">
