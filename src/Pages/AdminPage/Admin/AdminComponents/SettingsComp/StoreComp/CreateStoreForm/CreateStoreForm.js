@@ -3,22 +3,22 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../../../../../../../App';
 
 const CreateStoreForm = ({ branch }) => {
-    const { id } = useParams();
+    // const { id } = useParams();
     // console.log(id);
 
-    const { branchListState } = useContext(AppContext);
-    const [branchList] = branchListState;  // get state from context
+    // const { branchListState } = useContext(AppContext);
+    // const [branchList] = branchListState;  // get state from context
     // console.log(branchList.length);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    useEffect(() => {
-        if (branchList.length < 1) {
-            navigate('/admin/settings/branch')
-        }
-    }, [branchList.length, navigate])
+    // useEffect(() => {
+    //     if (branchList.length < 1) {
+    //         navigate('/admin/settings/branch')
+    //     }
+    // }, [branchList.length, navigate])
 
-    const selectedBranch = branchList.find(branch => branch._id.toString() === id.toString());
+    // const selectedBranch = branchList.find(branch => branch._id.toString() === id.toString());
     // console.log(selectedBranch);
 
 
@@ -50,7 +50,7 @@ const CreateStoreForm = ({ branch }) => {
 
     useEffect(() => {
         newStoreState.storeID && newStoreState.storeName &&
-            fetch(`http://localhost:5000/admin/branch/${selectedBranch._id}`, {
+            fetch(`http://localhost:5000/admin/branch/${branch._id}`, {
                 method: 'PUT', // Method itself
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
@@ -60,7 +60,7 @@ const CreateStoreForm = ({ branch }) => {
                 .then(res => res.json())
                 .then(data => console.log(data))
                 .catch(err => console.log(err))
-    }, [newStoreState, selectedBranch?._id]);
+    }, [newStoreState, branch?._id]);
 
     return (
         <div>
@@ -69,11 +69,11 @@ const CreateStoreForm = ({ branch }) => {
                     <div className='mt-2'>
                         <div className="w-1/2 inline-block">
                             <label className='text-sm font-semibold'>Branch ID</label>
-                            <input type="text" disabled value={selectedBranch?.branchID} className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                            <input type="text" disabled value={branch?.branchID} className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                         </div>
                         <div className='w-1/2 inline-block'>
                             <label className='text-sm font-semibold'>Branch Name</label>
-                            <input type="text" disabled value={selectedBranch?.branchName} className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
+                            <input type="text" disabled value={branch?.branchName} className='border w-full block my-2 p-2 focus:outline-gray-400 placeholder:text-gray-600 text-sm' />
                         </div>
 
                         <div className='w-1/2 inline-block mt-4'>
