@@ -8,9 +8,8 @@ const CreateStoreForm = () => {
 
     const { branchListState } = useContext(AppContext);
     const [branchList] = branchListState;  // get state from context
-    console.log(branchList.length);
+    // console.log(branchList.length);
 
-    // 
     const navigate = useNavigate();
 
     useEffect(() => {
