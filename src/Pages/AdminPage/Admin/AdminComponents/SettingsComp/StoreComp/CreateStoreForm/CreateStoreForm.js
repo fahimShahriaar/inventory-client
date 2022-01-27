@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const CreateStoreForm = ({ branch }) => {
-    const storeNameRef = useRef();
-    const storeIDRef = useRef();
+    const storeNameRef = useRef(null);
+    const storeIDRef = useRef(null);
+
+    console.log(branch);
 
     const [newStoreState, setNewStoreState] = useState({
         storeID: '',
@@ -20,7 +22,7 @@ const CreateStoreForm = ({ branch }) => {
         storeIDRef.current.value = '';
         storeNameRef.current.value = '';
 
-        e.preventDefault();
+        // e.preventDefault();
     }
 
     newStoreState.storeID && newStoreState.storeName && console.log(newStoreState);

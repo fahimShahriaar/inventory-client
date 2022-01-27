@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { AppContext } from '../../../../../../../App';
 import AdminHeader from '../../../../AdminHeader/AdminHeader';
 import AdminSidebar from '../../../../AdminSidebar/AdminSidebar';
@@ -12,15 +12,22 @@ const Store = () => {
 
     // get state from context
     const { branchListState } = useContext(AppContext);
-    const [branchList] = branchListState;
+    const [branchList, setBranchList] = branchListState;
 
-    // IF BranhList is empty for page reload, it will navigate to Branch Page
-    const navigate = useNavigate();
     useEffect(() => {
         if (branchList.length < 1) {
-            navigate('/admin/settings/branch')
+            fetch('http://localhost:5000/admin/branches')
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    setBranchList(data);
+                })
+                .catch(err => console.log(err))
         }
-    }, [branchList.length, navigate])
+    }, [branchList.length, setBranchList]);
+
+
+    // const branch = branchList.length ? branchList.find(branch => branch._id.toString() === id.toString()) : { _id: '', branchID: '', branchName: '', branchDesc: '' };
 
     const branch = branchList.find(branch => branch._id.toString() === id.toString());
     console.log(branch);
@@ -38,13 +45,13 @@ const Store = () => {
                             <div className="w-1/2">
                                 <div className="ml-6 p-4 shadow-lg">
                                     <h2 className="text-2xl my-4">Create Store</h2>
-                                    <CreateStoreForm branch={branch} />
+                                    {branch?._id && <CreateStoreForm branch={branch} />}
                                 </div>
                             </div>
                             <div className="w-full p-4 mt-8">
                                 <div className="ml-4">
                                     <h2 className="text-2xl my-4">Store List</h2>
-                                    <StoreList />
+                                    {branch?._id && <StoreList stores={branch?.stores} />}
                                 </div>
                             </div>
                         </div>

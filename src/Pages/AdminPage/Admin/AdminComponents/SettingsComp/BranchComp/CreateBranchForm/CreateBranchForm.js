@@ -29,7 +29,7 @@ const CreateBranchForm = () => {
         branchNameRef.current.value = '';
         branchIDRef.current.value = '';
         branchDescRef.current.value = '';
-        e.preventDefault();
+        // e.preventDefault();
     }
     return (
         <div>
