@@ -11,8 +11,8 @@ const StoreList = ({ stores }) => {
                         className={(i % 2 === 0 ? "bg-gray-200 p-2" : "bg-gray-300 p-2")}>
                         <div className="flex justify-between">
                             <div>{store?.storeName}</div>
-                            <Link to={`/admin/settings/store/${store?._id}`}>
-                                <button className="bg-emerald-700 px-4 py-1 text-white text-xs">BIN</button>
+                            <Link to={`/admin/settings/branch/store/${store?._id}`}>
+                                <button className="bg-emerald-700 px-4 py-1 text-white text-xs">Store Details</button>
                             </Link>
                         </div>
                     </div>)

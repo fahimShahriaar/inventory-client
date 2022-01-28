@@ -15,8 +15,8 @@ const BranchList = () => {
                         className={(i % 2 === 0 ? "bg-gray-200 p-2" : "bg-gray-300 p-2")}>
                         <div className="flex justify-between">
                             <div>{branch.branchName}</div>
-                            <Link to={`/admin/settings/store/${branch._id}`}>
-                                <button className="bg-emerald-700 px-4 py-1 text-white text-xs">Store</button>
+                            <Link to={`/admin/settings/branch/${branch._id}`}>
+                                <button className="bg-emerald-700 px-4 py-1 text-white text-xs">Branch Details</button>
                             </Link>
                         </div>
                     </div>)

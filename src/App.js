@@ -38,8 +38,8 @@ function App() {
 
         {/* settings routes */}
         <Route path="/admin/settings/branch" element={<Branch />} />
-        <Route path="/admin/settings/store/:id" element={<Store />} />
-        <Route path="/admin/settings/bin" element={<Bin />} />
+        <Route path="/admin/settings/branch/:id" element={<Store />} />
+        <Route path="/admin/settings/branch/store/:id" element={<Bin />} />
         <Route path="/admin/settings/user" element={<User />} />
 
         {/* Branch operation routes */}
