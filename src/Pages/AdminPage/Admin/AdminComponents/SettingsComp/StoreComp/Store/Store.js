@@ -51,7 +51,8 @@ const Store = () => {
                             <div className="w-full p-4 mt-8">
                                 <div className="ml-4">
                                     <h2 className="text-2xl my-4">Store List</h2>
-                                    {branch?._id && <StoreList stores={branch?.stores} />}
+                                    {/* {branch?._id && <StoreList stores={branch?.stores} />} */}
+                                    {branch?._id && <StoreList branch={branch} />}
                                 </div>
                             </div>
                         </div>
