@@ -1,8 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import AdminHeader from '../../../../AdminHeader/AdminHeader';
 import AdminSidebar from '../../../../AdminSidebar/AdminSidebar';
 
 const Bin = () => {
+    const { id } = useParams();
+    console.log('storeid', id);
     return (
         <div>
             <AdminHeader />
