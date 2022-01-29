@@ -3,7 +3,7 @@ import React from 'react';
 const AdminBody = () => {
     return (
         <div>
-            Admin body
+            Graph or statistical data will render here
         </div>
     );
 };
